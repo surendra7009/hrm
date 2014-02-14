@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+    <head>
+    <title>Untitled Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="cordova-2.5.0.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script src="js/jquery-1.10.2.min.js"></script>
+   
+   <!--Styles-->
+   <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+  
+        <script>
+            
+            
+            $(function()
+              {
+                $( "#startdate" ).datepicker({
+                                                       showOn: "button",
+                                                       buttonImage: "images/cal.gif",
+                                                       buttonImageOnly: true,
+                                                      dateFormat:'yy-mm-dd',
+                                             onSelect: function(value, date) {
+                                            
+                                             dateSelect(value,'0');
+                                             }
+                                                       });
+                         
+                $( "#enddate" ).datepicker({
+                                                      showOn: "button",
+                                                      buttonImage: "images/cal.gif",
+                                                      buttonImageOnly: true,
+                                                      dateFormat:'yy-mm-dd',
+                                           onSelect: function(value, date) {
+                                           
+                                           dateSelect(value,'1');
+                                           }
+                                           
+                                                      });
+              
+              
+              $('#checkbox1').change(function(){
+                                   
+                                    document.getElementById('hours').value="4";
+                                  
+                                     });
+              $('#checkbox2').change(function(){
+                                    document.getElementById('hours').value="4";
+
+                                   
+                                     });
+              $('#checkbox3').change(function(){
+                                      document.getElementById('hours').value="8";
+
+                                  
+                                     });
+              
+              
+    });
+                         
+
+                         
+function dateSelect(d,tag)
+{
+  //  alert(tag);
+    
+    var cdate=new Date();
+    var dd = cdate.getDate();
+    var mm = cdate.getMonth()+1; //January is 0!
+    
+    var yyyy = cdate.getFullYear();
+  
+    var today =yyyy +'-'+mm+'-'+dd;
+  
+  
+  
+
+
+    if(dd<=9)
+    {
+        dd ='0'+dd;
+    }
+    else if(mm<=9)
+    {
+        mm ='0'+mm;
+        
+    }
+    var today =yyyy +'-'+mm+'-'+dd;
+
+
+
+if(today ==d)
+{
+  
+  if(tag==1)
+  {
+      
+      if(starDate ==enddate)
+      {
+          document.getElementById('chck').style.display='block';
+         // alert("same date");
+      }
+  }
+    return false;
+   
+    
+}
+else
+{
+   
+
+  var starDate= $("#startdate").val();
+  var enddate= $("#enddate").val();
+  
+  
+//  alert(starDate);
+  
+  
+   var todatdate = new Date();
+   var Selectdate = new Date(d);
+ //  alert(todatdate);
+   //Year, Month, Date
+if (Selectdate <= todatdate)
+{
+    alert("Date must be greather then or equal to currunt Date!");
+  if(tag==0)
+  {
+       document.getElementById("startdate").value="";
+  }
+  else
+  
+  {
+       document.getElementById("enddate").value="";
+  }
+ 
+    return false;
+}
+else {
+    //alert("Date Two is greather then Date One.");
+}
+}
+}
+
+function Back()
+{
+   // alert("hello");
+    window.location="dashboard.html";
+}
+        
+</script>
+
+<script>
+    
+  </script>
+</head>
+
+<body>
+
+        <!--Main Coding-->
+        <seciton class="main-container">
+        
+        	<div class="container dashboard-screen">
+            	<a href="#" class="dashboard-button float-left" onclick="Back();"></a><h1 class="float-left">Add leave</h1>
+            </div>
+            
+            <div class="container inner-pages">
+            	
+                    <div class="row margin-bottom1">
+                	<div class="row myhours-control margin-bottom">
+                    	<h2 class="title-spacing">John Wassing</h2>
+                    </div>
+                    </div>
+
+                <div class="row addleave margin-bottom">
+                        <label>Leave Kind</label>
+                        <select id ="leavetype">
+                          <option value="Paid Leave">Paid Leave</option>
+                          <option value="Sick">Sick</option>
+                          <option value="Vacation">Vacation</option>
+                          <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                	<div class="row addleave margin-bottom">
+                        <label>Start Date/Time</label>
+                        <input type="Text" id="startdate" maxlength="25"  disabled/>
+						
+                    </div>
+
+                	<div class="row addleave margin-bottom">
+                        <label>End Date/Time</label>
+                        <input type="Text" id="enddate" maxlength="25" disabled/>
+					
+                    </div>
+                    <div class="row addleave margin-bottom" id="chck" style="display:none;">
+                    	<div class="addleave-checkbox">
+                            <span><input type="radio" name="f" value="first" id ="checkbox1">first half</span>
+                            <span><input type="radio" name="f" value="second" id ="checkbox2">second half</span>
+                            <span><input type="radio" name="f" value="full" id ="checkbox3">full day</span>
+                        </div>
+                        <div class="addleave-textfield">
+                            <input type="Text" id="hours" maxlength="25" disabled/>
+                        </div>
+                    </div>
+                	<div class="row addleave margin-bottom">
+                        <label>Notes</label>
+                        <textarea name="" rows="3" id="comments"></textarea>
+                        
+                    </div>
+                    
+                    <div class="row addleave margin-bottom text-center" >
+                        <a href="#" class="mybutton" onclick="AddLeave();">submit</a>
+                    </div>
+
+                </div>
+                
+                
+                
+            </div>
+        	
+      	</seciton>
+   
+
+</body>
+</html>
+
+

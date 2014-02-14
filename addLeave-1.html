@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+    <head>
+    <title>Untitled Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Styles-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+          <script src="js/respond.js"></script>
+        <![endif]-->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jq.js"></script> 
+	<script language="javascript" type="text/javascript" src="js/datetimepicker.js"></script> 
+
+    </head>
+
+<body>
+
+	
+        <!--Main Coding-->
+        <seciton class="main-container">
+        
+        	<div class="container dashboard-screen">
+            	<a href="#" class="dashboard-button float-left"></a><h1 class="float-left">Add leave</h1><a href="#" class="logout-button float-right"></a>
+            </div>
+            
+            <div class="container inner-pages">
+            	
+		<div class="row margin-bottom">
+                	<div class="row myhours-control margin-bottom">
+                    	<h2>John Wassing</h2>
+		</div>
+                    </div>
+
+                <div class="row margin-bottom">
+                	<div class="row myhours-control margin-bottom">
+                    	<span></span>
+                    </div>
+
+                	<div class="row addleave margin-bottom">
+                        <label>Leave Kind</label>
+                        <select>
+                          <option value="volvo">Paid Leave</option>
+                          <option value="saab">Sick</option>
+                          <option value="mercedes">Vacation</option>
+                          <option value="audi">Other</option>
+                        </select>
+                    </div>
+
+                	<div class="row addleave margin-bottom">
+                        <label>Start Date/Time</label>
+                        <input type="Text" id="startdate" maxlength="25" /> &nbsp;&nbsp;
+						<a href="javascript:NewCal('demo1','dd/MM/yyyy',true,24)">
+						<img src="images/cal.gif" width="20" height="20" border="0" alt="Pick a date" />
+						</a>
+                    </div>
+
+                	<div class="row addleave margin-bottom">
+                        <label>End Date/Time</label>
+                        <input type="Text" id="enddate" maxlength="25" /> &nbsp;&nbsp;
+						<a href="javascript:NewCal('demo1','dd/MM/yyyy',true,24)">
+						<img src="images/cal.gif" width="20" height="20" border="0" alt="Pick a date" />
+						</a>
+                    </div>
+
+                	<div class="row addleave margin-bottom">
+                        <label>Notes</label>
+                        <textarea name="" rows="3" >
+                        </textarea>
+                    </div>
+                    
+                    <div class="row addleave margin-bottom text-center" >
+                        <a href="#" class="mybutton">Save</a>
+                    </div>
+
+                </div>
+                
+                
+                
+            </div>
+        	
+      	</seciton>
+   
+
+</body>
+</html>
+
+

@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+    <head>
+    <title>Untitled Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="cordova-2.5.0.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <!--Styles-->
+        <link href="css/reset.css" rel="stylesheet" type="text/css">
+            <link href="css/style.css" rel="stylesheet" type="text/css">
+                
+        <script src="js/jq.js"></script>
+    
+    <!-- phonegap loading-->
+    
+    <script type="text/javascript" charset="utf-8">
+       
+        document.addEventListener("deviceready", onDeviceReady, false);
+        
+    function onDeviceReady() {
+     
+    }
+    
+    // Handle the pause event
+    //
+    function onPause() {
+    }
+    
+    function getPaySlip(pagiid)
+    
+    
+    {
+      //  alert(pagiid);
+        if(pagiid==1)
+        {
+             window.location="paySlip.html";
+        }
+        else if(pagiid==2)
+        {
+             window.location="addLeave.html";
+        }
+        else if(pagiid==3)
+        {
+            window.location="leaveOverview.html";
+        }
+        else if(pagiid==4)
+        {
+            window.location="EmployeeList.html";
+        }
+        else if(pagiid==5)
+        {
+            window.location="onleave.html";
+            
+        } else if(pagiid==6)
+        {
+            window.location="information.html";
+        }
+
+
+    }
+    </script>
+    
+    </head>
+
+<body>
+
+
+        <!--Main Coding-->
+        <seciton class="main-container">
+        
+        	<div class="container dashboard-screen">
+            	<h1 class="float-left">Dashboard</h1><button class="logout-button float-right"  onclick ="Logout();">&nbsp;</button>
+            </div>
+            
+            <div class="container dashboard-icon-container">
+            	
+                <div class="row">
+                    <div class="dashboard-icon-box">
+                        <a href="#">
+                            <span><img src="images/icons/myData.png" width="512" height="512" alt="" onclick ="GetMyprofile();" id ="myProfile"></span>
+                            <strong>My Data</strong>
+                        </a>
+                    </div>
+                    <div class="dashboard-icon-box">
+                        <a href="#">
+                            <span><img src="images/icons/myHour.png" width="512" height="512" alt="" onclick ="GetHoures('0');"></span>
+                            <strong>My Hours</strong>
+                        </a>
+                    </div>
+                    <div class="dashboard-icon-box">
+                        <a href="#">
+                            <span><img src="images/icons/myPlaySlip.png" width="512" height="512" alt="" onclick="getPaySlip(1)"></span>
+                            <strong>My Payslip</strong>
+                        </a>
+                    </div>
+                </div>
+                
+                
+              <div class="row">
+                    <div class="dashboard-icon-box">
+                        <a href="#">
+                            <span><img src="images/icons/myLeaves.png" width="512" height="512" alt="" onclick="getPaySlip(2)"></span>
+                            <strong>My Leave</strong>
+                        </a>
+                  </div>
+                    <div class="dashboard-icon-box">
+                        <a href="#">
+                            <span><img src="images/icons/myLeavesOverview.png" width="512" height="512" alt="" onclick="getPaySlip(3)"></span>
+                            <strong>My Leave Overview</strong>
+                        </a>
+                    </div>
+                    <div class="dashboard-icon-box">
+                        <a href="#">
+                            <span><img src="images/icons/whoIsOnLeaves.png" width="512" height="512" alt="" onclick="getPaySlip(4)"></span>
+                            <strong>Who is Who</strong>
+                        </a>
+                    </div>
+                </div>
+                
+                
+              <div class="row">
+                    <div class="dashboard-icon-box">
+                        <a href="#">
+                            <span><img src="images/icons/whoIsOnLeaves.png" width="512" height="512" alt="" onclick="getPaySlip(5)"></span>
+                            <strong>Who is on leave</strong>
+                        </a>
+                  </div>
+                    <div class="dashboard-icon-box">
+                        <a href="#">
+                            <span><img src="images/icons/information.png" width="512" height="512" alt="" onclick="getPaySlip(6)"></span>
+                            <strong>Information</strong>
+                        </a>
+                    </div>
+                    <div class="dashboard-icon-box">
+                        <a href="#">
+                            <span><img src="images/icons/approvedLeave.png" width="512" height="512" alt="" onclick="AddLeave(7)"></span>
+                            <strong>Approve Leave</strong>
+                        </a>
+                    </div>
+                </div>
+
+            
+            </div>
+        	
+      	</seciton>
+   
+
+</body>
+</html>
+
+

@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+    <head>
+    <title>Untitled Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <script type="text/javascript" src="cordova-2.5.0.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <!--Styles-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+            
+            <script src="js/jq.js"></script>
+            
+            <!-- phonegap loading-->
+            
+            <script type="text/javascript" charset="utf-8">
+                document.addEventListener("deviceready", onDeviceReady, false);
+                
+                function onDeviceReady()
+                {
+                    
+                  
+                    var textBox = document.getElementById("txtfname");
+                    
+                   getMyHoures();
+                    
+                }
+            
+            // Handle the pause event
+            //
+            function onPause()
+            {
+                
+                
+            }
+            
+            function selectDate()
+            {
+                var date = document.getElementById("datepicker").value;
+                
+               // alert(date);
+                
+                GetHoures(date);
+            }
+            
+function getMyHoures()
+        {
+                
+                
+                var checkin1 = localStorage.getItem("checkin1");
+                var checkout1 = localStorage.getItem("checkout1");
+                var checkin2 = localStorage.getItem("checkin2");
+                var checkout2  =localStorage.getItem("checkout2");
+                 var dates  =localStorage.getItem("date");
+               
+                //alert(dates);
+                var totalHoures="";
+        
+        
+        var stime = parseInt(checkin1);
+        var etime =parseInt(checkout1);
+        
+        var stime1 = parseInt(checkin2);
+        var etime1 =parseInt(checkout2);
+        
+        if (etime>=stime) {
+            var diff = (etime-stime);
+        }
+        else {
+            var diff = Math.abs(stime-etime-24);
+            
+        }
+        if (etime1>=stime1) {
+            var diff1 = (etime1-stime1);
+        }
+        else {
+            var diff1 = Math.abs(stime1-etime1-24);
+            
+        }
+        
+        
+        totalHoures=diff+diff1;
+        
+        //alert(totalHoures);
+
+
+                document.getElementById("txtcheckIn1").value=checkin1;
+                document.getElementById("txtcheckout1").value=checkout1;
+                document.getElementById("txtcheckIn2").value=checkin2;
+                document.getElementById("txtcheckout2").value=checkout2;
+                document.getElementById("txttotalHoures").value=totalHoures;
+                document.getElementById("datepicker").value=dates;
+        
+        
+       
+       
+
+        }
+   
+    
+    
+    </script>
+   
+   
+   
+    </head>
+
+<body>
+    
+
+
+        <!--Main Coding-->
+        <seciton class="main-container">
+        
+        	<div class="container dashboard-screen">
+            	<a href="dashboard.html" class="dashboard-button float-left"></a><h2 class="float-left">My Hours</h2>
+            </div>
+            
+            <div class="container inner-pages">
+            	
+                <div class="row margin-bottom">
+                	<div class="row myhours-control margin-bottom">
+                    	<span></span>
+                    </div>
+                    <div class="row myhours margin-bottom">
+                        <label class="label1">Select Date</label>
+                     <input type="date" name="dateselect" id="datepicker" />
+                      <input type="submit" class="submit" value="submit" onclick="selectDate()">
+                            </div>
+                	<div class="row myhours margin-bottom">
+                        <label>Check in start day</label>
+                        <input name="" type="text" id ="txtcheckIn1">
+                    </div>
+
+                	<div class="row myhours margin-bottom">
+                        <label>Check out before lunch</label>
+                        <input name="" type="text" id ="txtcheckout1" >
+                    </div>
+
+                	<div class="row myhours margin-bottom">
+                        <label>Check in after lunch</label>
+                        <input name="" type="text" id ="txtcheckIn2">
+                    </div>
+
+                	<div class="row myhours margin-bottom">
+                        <label>Check out end day</label>
+                        <input name="" type="text" id ="txtcheckout2">
+                    </div>
+
+                	<div class="row myhours margin-bottom">
+                        <label>Total hours</label>
+                        <input name="" type="text" id ="txttotalHoures">
+                    </div>
+
+                </div>
+                
+                
+                
+            </div>
+        	
+      	</seciton>
+   
+
+</body>
+</html>
+
+

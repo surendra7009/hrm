@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+    <head>
+    <title>Untitled Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="cordova-2.5.0.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <!--Styles-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+            
+    <script src="js/jq.js"></script>
+            
+            <!-- phonegap loading-->
+            
+            <script type="text/javascript" charset="utf-8">
+                document.addEventListener("deviceready", onDeviceReady, false);
+               
+                function onDeviceReady()
+                {
+                    var textBox = document.getElementById("txtfname");
+                    
+                   getProfileDetail();
+
+                }
+            
+            // Handle the pause event
+            //
+            function onPause()
+            {
+                
+                
+            }
+            
+         
+    
+ function getProfileDetail()
+ {
+    
+    
+    var fname = localStorage.getItem("fname");
+    var mname = localStorage.getItem("mname");
+    var lname = localStorage.getItem("lname");
+    var dof  =localStorage.getItem("dob");
+    var pnumber =localStorage.getItem("pnumber");
+    var mnumber= localStorage.getItem("mnumber");
+    var jobtittle= localStorage.getItem("jobtittle");
+    var bisEmail =localStorage.getItem("bemail");
+    var privateEmail= localStorage.getItem("hemail");
+    var zipCode = localStorage.getItem("zcode");
+     
+    var address= localStorage.getItem("address");
+     
+    var city =localStorage.getItem("city");
+    var country =localStorage.getItem("country");
+    var imagePath =localStorage.getItem("imagePath");
+
+//alert(bisEmail);
+ document.getElementById("txtfname").value=fname;
+ document.getElementById("txtmname").value=mname;
+ document.getElementById("txtlname").value=lname;
+ document.getElementById("txtdof").value=dof;
+ document.getElementById("txtpnumber").value=pnumber;
+ document.getElementById("txtmnumber").value=mnumber;
+ document.getElementById("txtjob").value=jobtittle;
+ document.getElementById("txtbemail").value=bisEmail;
+ document.getElementById("txthemail").value=privateEmail;
+ document.getElementById("txtaddress").value=address;
+ document.getElementById("txtzipCode").value=zipCode;
+ document.getElementById("txtcity").value=city;
+ document.getElementById("txtcountry").value=country;
+ document.getElementById("profileImg").src=imagePath;
+
+
+ }
+            
+//Edit Profile
+
+function editClicked()
+{
+    //alert("clickd");
+   $("txtfname").prop('disabled', false);
+}
+            
+    </script>
+    </head>
+
+<body>
+
+
+        <!--Main Coding-->
+        <seciton class="main-container">
+        
+        	<div class="container dashboard-screen">
+            	<a href="dashboard.html" class="dashboard-button float-left"></a><h2 class="float-left">My Data</h2><a href="dashboard.html" class="edit-button float-right" background: url(../images/icons/logout.png)></a>
+            </div>
+            
+            <div class="container inner-pages">
+            	
+                <div class="row margin-bottom">
+           	    	
+                    <div class="float-left profile-image"><img src="images/users/chirag.png" width="99" height="99" alt="" id="profileImg" onclick="editClicked();"></div>
+                    <div class="float-left profile-data">
+
+                    	<div class="row margin-bottom">
+                            <label>First Name</label>
+                            <input name="" type="text" id="txtfname" disabled>
+                        </div>
+
+                    	<div class="row margin-bottom">
+                            <label>Middle Name</label>
+                            <input name="" type="text" id="txtmname" disabled>
+                        </div>
+                        
+                        <div class="row">
+                            <label>Last Name</label>
+                            <input name="" type="text" id="txtlname" disabled>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="row margin-bottom">
+                    <div class="row margin-bottom">
+                        <label>Date of Birth</label>
+                        <input name="" type="text" id="txtdof" disabled>
+                    </div>
+                    
+                    <div class="row margin-bottom">
+                        <label>Phone Number</label>
+                        <input name="" type="text" id="txtpnumber" disabled>
+                    </div>
+                    
+                    <div class="row margin-bottom">
+                        <label>Mobile Phone Number</label>
+                        <input name="" type="text" id="txtmnumber" disabled>
+                    </div>
+                    
+                    <div class="row margin-bottom">
+                        <label>Job Title</label>
+                        <input name="" type="text" id="txtjob" disabled>
+                    </div>
+                    
+                    <div class="row margin-bottom">
+                        <label>Email Work</label>
+                        <input name="" type="text" id="txtbemail" disabled>
+                    </div>
+                    
+                    <div class="row margin-bottom">
+                        <label>Email Home</label>
+                        <input name="" type="text" id="txthemail" disabled>
+                    </div>
+                    
+                    <div class="row margin-bottom">
+                        <label>Address</label>
+                        <input name="" type="text" id="txtaddress" disabled>
+                    </div>
+                    
+                    <div class="row margin-bottom">
+                        <label>Zip Code</label>
+                        <input name="" type="text" id="txtzipCode" disabled>
+                    </div>
+                    
+                    <div class="row margin-bottom">
+                        <label>Town</label>
+                        <input name="" type="text" id="txtcity" disabled>
+                    </div>
+                    
+                    <div class="row margin-bottom">
+                        <label>Country</label>
+                        <input name="" type="text" id="txtcountry" disabled>
+                    </div>
+                    
+                    <div class="row text-center">
+                    	<button class="common-button">Change data</button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        	
+      	</seciton>
+   
+
+</body>
+</html>
+
+

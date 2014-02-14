@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+    <title>Untitled Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="cordova-2.5.0.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <!--Styles-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    
+    <script src="js/jq.js"></script>
+    
+    
+    <!-- phonegap loading-->
+    
+    <script type="text/javascript" charset="utf-8">
+        
+        // Call onDeviceReady when PhoneGap is loaded.
+        //
+        // At this point, the document has loaded but phonegap-1.0.0.js has not.
+        // When PhoneGap is loaded and talking with the native device,
+        // it will call the event `deviceready`.
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+        
+        var loginCheck= localStorage.getItem("islogin");
+        
+        //alert(loginCheck);
+        if(loginCheck=="1")
+        {
+            window.location = "dashboard.html";
+            
+        }
+
+        // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+        //
+        function onDeviceReady() {
+           // document.addEventListener("pause", onPause, false);
+            //test();
+           
+           
+           
+        }
+    
+    // Handle the pause event
+    //
+    function onPause() {
+    }
+    
+        </script>
+    
+    </head>
+
+<body>
+
+
+        <!--Main Coding-->
+        <seciton class="main-container">
+        	<div class="container text-center logo">
+       	    	<img src="images/logo.png" width="335" height="90" alt="">
+            </div>
+            
+            <div class="user-login-form">
+        
+                	<div class="container">
+                    	<label>Username</label>
+                    	<input name="txtUserName" type="text" id="txtUserName" value="soyab">
+                    </div>
+                    
+                    <div class="container">
+                    	<label>Password</label>
+                    	<input name="txtPass" id ="txtPassword" type="password" value="soyab">
+                    </div>
+                    
+                    <div class="container">
+                    	<label><input type="checkbox" id ="checkbox"> <span>Remember me...</span></label>
+                    </div>
+                    
+                    <div class="container">
+                    	<button class="login-button" onclick ="checkLogin();">Login</button>
+                    </div>
+               
+            </div>
+        </seciton>
+    
+
+</body>
+</html>
+
+
